@@ -64,6 +64,8 @@ int search_builtins(char *cmd_name, char **args)
 			}
 		}
 	}
+	else if (_strcmp(cmd_name, "cd") == 0)
+		change_directory(args[1]);
 	else
 		return (0);
 	return (1);
