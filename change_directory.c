@@ -7,11 +7,11 @@
  */
 void changeDirectory(const char *newpwd) 
 {   
-    int retunstate,home_offset,oldpwd_offset;
+    int retunstate, home_offset, oldpwd_offset;
     char buffer[1024];
     char *cwd;
-    char *home = _getenv("HOME",home_offset);
-    char *oldpwd = _getenv("PWD",oldpwd_offset);
+    char *home = _getenv("HOME",&home_offset);
+    char *oldpwd = _getenv("PWD",&oldpwd_offset);
 
     if (newpwd == NULL || strstr(newpwd, "") == 0)
     {
