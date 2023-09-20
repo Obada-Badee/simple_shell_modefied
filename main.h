@@ -40,7 +40,6 @@ typedef struct alias_s
 	struct alias_s *next;
 } alias_t;
 
-alias_t *aliases;
 /**
  * add_alias_end - Add a new alias at the end of an aliases linked list
  * @head: A pointer to a pointer to the first node in the linked list
