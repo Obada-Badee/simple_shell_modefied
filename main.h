@@ -378,4 +378,11 @@ char *_strchr(char *s, char c);
  */
 int is_equal_found(const char *name);
 
+/**
+ * changeDirectory - Change the current directory 
+ * @newpwd: The path pf the new Directory 
+ * Return: Nothing
+ */
+void changeDirectory(const char *newpwd);
+
 #endif /* MAIN_H */
