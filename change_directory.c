@@ -12,7 +12,7 @@ void change_directory(const char *newpwd)
 	char buffer[1024];
 	char *cwd;
 	char *home = _getenv("HOME", &home_offset);
-	char *pwd = _getenv("PWD", &oldpwd_offset);
+	char *pwd = _getenv("PWD", &pwd_offset);
 	char *oldpwd = _getenv("OLDPWD", &oldpwd_offset);
 
 	if (newpwd == NULL || _strcmp(newpwd, "") == 0)
