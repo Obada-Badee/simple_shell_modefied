@@ -358,6 +358,15 @@ int _atoi(char *s);
 char *_itoa(int num);
 
 /**
+ * is_atoi - Check if a string is convertable to digit
+ * @str: The string to check
+ *
+ * Return: If the string is convertable - 1
+ *	   otherwise - 0
+ */
+int is_atoi(char *str);
+
+/**
  * _strchr - Locate a character in a string
  * @s: The string to be searched
  * @c: The character to find
