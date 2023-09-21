@@ -12,24 +12,26 @@
  */
 int search_builtins(char *cmd_name, char **args)
 {
-	int i = 0;
-	int *exit_status = get_exit_status();
+	int i = 0, *exit_status = get_exit_status();
 	alias_t **head = get_head();
 
 	while (args[i])
 		i++;
-
 	if (_strcmp(cmd_name, "exit") == 0)
 	{
 		if (i > 2)
 			return  (-1);
 		if (i == 2)
-			*exit_status = (_atoi(args[1]) & 255);
-
+			*exit_status = (_atoi(args[1]));
+		if (*exit_status < 0)
+		{
+			write(STDERR_FILENO, "./hsh: 1: exit: Illegal number: -98\n", 36);
+			*exit_status = 2;
+		}
 		clean(args);
 		clean(environ);
 		free_list(*head);
-		exit(*exit_status);
+		exit(*exit_status & 255);
 	}
 	else if (_strcmp(cmd_name, "env") == 0)
 		print_env();
