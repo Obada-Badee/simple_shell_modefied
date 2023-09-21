@@ -45,25 +45,6 @@ int search_builtins(char *cmd_name, char **args)
 			return  (-1);
 		_unsetenv(args[1]);
 	}
-	else if (_strcmp(cmd_name, "alias") == 0)
-	{
-		if (i == 1)
-		{
-			print_aliases(*head);
-		}
-		else
-		{
-			i = 1;
-			while (args[i])
-			{
-				if (_strchr(args[i], '='))
-					create_alias(args[i]);
-				else
-					print_specific_alias(args[i]);
-				i++;
-			}
-		}
-	}
 	else if (_strcmp(cmd_name, "cd") == 0)
 		change_directory(args[1]);
 	else
