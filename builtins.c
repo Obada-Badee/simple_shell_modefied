@@ -28,11 +28,6 @@ int search_builtins(char *cmd_name, char **args)
 			write(STDERR_FILENO, "./hsh: 1: exit: Illegal number: -98\n", 36);
 			*exit_status = 2;
 		}
-		if (is_atoi(args[1]) == 0)
-		{
-			write(STDERR_FILENO, "./hsh: 1: exit: Illegal number: HBTN\n", 37);
-			*exit_status = 2;
-		}
 		clean(args);
 		clean(environ);
 		free_list(*head);
