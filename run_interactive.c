@@ -1,38 +1,33 @@
 #include "main.h"
 
 /**
- * run_interactive - Execute the shell commands in the interactive mode
+ * run_interactive_v2 - Execute the shell commands in the interactive mode
  *
  * Return: void
  */
-void run_interactive(void)
+void run_interactive_v2(void)
 {
-	char **args, *full_path;
-
-	while (1)
+    char *separator ,*buff = NULL ,**commands;
+    size_t n;
+    while (1)
 	{
-		write(STDOUT_FILENO, "$ ", 2);
+        write(STDOUT_FILENO, "$ ", 2);
+        
+	    if (getline(&buff, &n, stdin) == -1)
+		    exit(1);
+        
+        separator = check_separator(buff);
 
-		args = create_args();
-
-		if (search_builtins(args[0], args))
-		{
-			clean(args);
-			continue;
-		}
-
-		full_path = find_file(args[0]);
-
-		if (full_path == NULL)
-		{
-			clean(args);
-			perror("Error");
-			continue;
-		}
-
-		execute(args, full_path);
-	}
-
+        if (separator)
+        {
+            *commands = split_string(buff,separator);
+            handle_separator(commands,separator);
+        }
+        else
+        {
+            search_execute(buff);
+        }
+        free(buff);
+        free(commands);
+    }
 }
-
-

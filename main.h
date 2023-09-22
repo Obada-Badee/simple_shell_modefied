@@ -393,4 +393,65 @@ int is_equal_found(const char *name);
  */
 void change_directory(const char *newpwd);
 
+/**
+ * _strstr - Locate a substring
+ * @haystack: The string to be searched
+ * @needle: The substring that should be located
+ *
+ * Return: A pointer to the beginning of the located
+ *	   substring, or NULL if the substring is not found
+ */
+char *_strstr(char *haystack, char *needle);
+
+/**
+ * search_execute - Serach for the command and execute it if found
+ *
+ * Return: void
+ */
+void search_execute(char **command);
+
+/**
+ * handle_separator - It executes the function related to each Seperator
+ * @commands: List of command to be executed
+ * @separator: The separator to exexute a function based on  
+ * Return: void
+ */
+void handle_separator(char **commands ,int code);
+
+/**
+ * check_separator - Searh a buffer for some seprator 
+ * @buff: Buffer to be searched for a seprator
+ * Return: Returns an int 
+ */
+int check_separator(char *buff);
+
+/**
+ * handle_anding - handles and Executes the command seperated by '&&'
+ * @commands: List of command to be separated
+ * Return: void
+ */
+void handle_anding(char **commands);
+
+/**
+ * handle_oring - handles and Executes the command seperated by '||'
+ * @commands: List of command to be separated
+ * Return: void
+ */
+void handle_oring(char **commands);
+
+/**
+ * handle_colon - handles and Executes the command seperated by ';'
+ * @commands: List of command to be separated
+ * Return: void
+ */
+void handle_colon(char **commands);
+
+/**
+ * _gtline - gets a line from standrad input
+ * @lineptr: Pointer to char
+ * @fd: file discriptor to read from
+ * Return: Number of Bits read
+ **/
+int _gtline(char **lineptr, int fd);
+
 #endif /* MAIN_H */
