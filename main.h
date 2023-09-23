@@ -411,19 +411,11 @@ char *_strstr(char *haystack, char *needle);
 void search_execute(char *command);
 
 /**
- * handle_separator - It executes the function related to each Seperator
- * @commands: List of command to be executed
- * @separator: The separator to exexute a function based on  
- * Return: void
- */
-void handle_separator(char **commands ,int code);
-
-/**
  * check_separator - Searh a buffer for some seprator 
  * @buff: Buffer to be searched for a seprator
  * Return: Returns the seperator
  */
-char *check_separator(char *buff);
+int check_separator(char *buff,char **commands);
 
 /**
  * handle_anding - handles and Executes the command seperated by '&&'

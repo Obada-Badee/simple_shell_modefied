@@ -7,7 +7,8 @@
  */
 void run_interactive(void)
 {
-    char *separator ,*buff = NULL ,**commands;
+    char *buff = NULL ,**commands;
+    int is_seperator;
     size_t n;
     while (1)
 	{
@@ -16,12 +17,11 @@ void run_interactive(void)
 	    if (getline(&buff, &n, stdin) == -1)
 		    exit(1);
         
-        separator = check_separator(buff);
+        is_seperator = check_separator(buff,commands);
 
         if (separator)
         {
-            commands = split_string(buff,separator);
-            handle_separator(commands,separator);
+            continue;
         }
         else
         {
