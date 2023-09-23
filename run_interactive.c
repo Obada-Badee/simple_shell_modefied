@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * run_interactive_v2 - Execute the shell commands in the interactive mode
+ * run_interactive - Execute the shell commands in the interactive mode
  *
  * Return: void
  */
-void run_interactive_v2(void)
+void run_interactive(void)
 {
     char *separator ,*buff = NULL ,**commands;
     size_t n;
