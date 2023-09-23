@@ -19,9 +19,6 @@ void handle_separator(char **commands ,int code)
     case 3:
         handle_oring(commands);
         break;
-    case -1:
-        perror('Error');
-    }
 }
 
 /**
