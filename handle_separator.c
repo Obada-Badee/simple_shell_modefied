@@ -19,6 +19,7 @@ void handle_separator(char **commands ,int code)
     case 3:
         handle_oring(commands);
         break;
+    }
 }
 
 /**
