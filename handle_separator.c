@@ -78,6 +78,7 @@ void handle_oring(char **commands)
  */
 void handle_colon(char **commands)
 {
-    while (**commands)
-        search_execute(*(commands++));
+    int i = 0;
+    while (commands[i])
+        search_execute(commands[i++]);
 }
