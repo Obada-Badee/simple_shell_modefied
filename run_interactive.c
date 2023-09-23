@@ -7,7 +7,7 @@
  */
 void run_interactive(void)
 {
-    char *buff = NULL ,**commands = NULL;
+    char **commands, *buff = NULL ;
     int is_seperator;
     size_t n;
     while (1)
@@ -28,5 +28,7 @@ void run_interactive(void)
             search_execute(buff);
         }
         free(buff);
+        if (commands)
+            clean(commands);
     }
 }
