@@ -24,18 +24,20 @@ void handle_separator(char **commands ,int code)
 /**
  * check_separator - Searh a buffer for some seprator 
  * @buff: Buffer to be searched for a seprator
- * Return: Returns an int 
+ * Return: Returns the seperator
  */
-int check_separator(char *buff)
+char *check_separator(char *buff)
 {
-    if (_strstr(buff,";'"))
-        return (1);
+    char *sep ;
+    if (_strstr(buff,";"))
+        sep = ";";
     else if (_strstr(buff,"&&"))
-        return (2);
+        sep = "&&";
     else if (_strstr(buff,"||"))
-        return (3);
+        sep = "||";
     else
         return(0);
+    return (sep);
 }
 
 /**

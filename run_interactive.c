@@ -20,7 +20,7 @@ void run_interactive(void)
 
         if (separator)
         {
-            *commands = split_string(buff,separator);
+            commands = split_string(buff,separator);
             handle_separator(commands,separator);
         }
         else

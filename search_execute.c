@@ -5,7 +5,7 @@
  *
  * Return: void
  */
-void search_execute(char **command)
+void search_execute(char *command)
 {
 	char **args, *full_path;
 
