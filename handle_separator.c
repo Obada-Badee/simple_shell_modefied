@@ -34,12 +34,12 @@ int check_separator(char *buff,char **commands)
  */
 void handle_anding(char **commands)
 {
-    int last_exit_code;
+    int last_exit_code = 0;
 
     search_execute(*(commands++));
     while (**commands)
     {
-        last_exit_code = &get_exit_status;
+        last_exit_code = &(get_exit_status);
         if (last_exit_code == EXIT_SUCCESS)
             search_execute(*(commands++));
         else
@@ -54,7 +54,7 @@ void handle_anding(char **commands)
  */
 void handle_oring(char **commands)
 {
-    int last_exit_code;
+    int last_exit_code = 0;
 
     search_execute(*(commands++));
     while (**commands)
