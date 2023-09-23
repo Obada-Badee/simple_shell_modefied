@@ -25,7 +25,8 @@ int check_separator(char *buff)
     }
     else
         return(0);
-        clean(commands);
+
+    clean(commands);
     return (1);
 }
 
