@@ -38,13 +38,14 @@ int check_separator(char *buff)
 void handle_anding(char **commands)
 {
     int *last_exit_code;
+    int i = 0;
 
-    search_execute(*(commands++));
-    while (**commands)
+    search_execute(commands[i++]);
+    while (commands[i])
     {
         last_exit_code = get_exit_status();
         if (*last_exit_code == EXIT_SUCCESS)
-            search_execute(*(commands++));
+            search_execute(commands[i++]);
         else
             break;
     }
@@ -58,15 +59,15 @@ void handle_anding(char **commands)
 void handle_oring(char **commands)
 {
     int *last_exit_code ;
-
-    search_execute(*(commands++));
-    while (**commands)
+    int i = 0;
+    search_execute(commands[i++]);
+    while (commands[i])
     {
         last_exit_code = get_exit_status();
         if (*last_exit_code == EXIT_SUCCESS)
             break;
         else
-            search_execute(*(commands++));
+            search_execute(commands[i++]);
     }
 }
 
