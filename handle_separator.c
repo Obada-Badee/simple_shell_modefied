@@ -5,8 +5,9 @@
  * @buff: Buffer to be searched for a seprator
  * Return: Returns the seperator
  */
-int check_separator(char *buff,char **commands)
+int check_separator(char *buff)
 {
+    char **commands;
     if (_strstr(buff,";"))
     {
         commands = split_string(buff,";");
@@ -24,6 +25,7 @@ int check_separator(char *buff,char **commands)
     }
     else
         return(0);
+        clean(commands);
     return (1);
 }
 

@@ -7,7 +7,7 @@
  */
 void run_interactive(void)
 {
-    char **commands = NULL, *buff = NULL;
+    char *buff = NULL;
     int is_seperator;
     size_t n;
     while (1)
@@ -17,7 +17,7 @@ void run_interactive(void)
 	    if (getline(&buff, &n, stdin) == -1)
 		    exit(1);
         
-        is_seperator = check_separator(buff,commands);
+        is_seperator = check_separator(buff);
 
         if (is_seperator)
         {

@@ -415,7 +415,7 @@ void search_execute(char *command);
  * @buff: Buffer to be searched for a seprator
  * Return: Returns the seperator
  */
-int check_separator(char *buff,char **commands);
+int check_separator(char *buff);
 
 /**
  * handle_anding - handles and Executes the command seperated by '&&'
