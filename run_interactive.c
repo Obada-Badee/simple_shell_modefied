@@ -28,6 +28,7 @@ void run_interactive(void)
             search_execute(buff);
         }
         free(buff);
-        clean(commands);
+        if (commands)
+            clean(commands);
     }
 }
