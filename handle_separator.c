@@ -69,10 +69,11 @@ void handle_anding(char **commands)
 void handle_oring(char **commands)
 {
     int *last_exit_code;
+
     search_execute(*commands++);
     while (*commands)
     {
-        *last_exit_code = get_exit_status;
+        last_exit_code = get_exit_status;
         if (last_exit_code == EXIT_SUCCESS)
             break;
         else
