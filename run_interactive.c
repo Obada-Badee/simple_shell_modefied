@@ -19,7 +19,7 @@ void run_interactive(void)
         
         is_seperator = check_separator(buff,commands);
 
-        if (separator)
+        if (is_seperator)
         {
             continue;
         }
