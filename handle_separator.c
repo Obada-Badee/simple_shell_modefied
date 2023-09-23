@@ -8,14 +8,20 @@
 int check_separator(char *buff,char **commands)
 {
     if (_strstr(buff,";"))
+    {
         commands = split_string(buff,";");
         handle_colon(commands);
+    }
     else if (_strstr(buff,"&&"))
+    {
         commands = split_string(buff,"&&");
         handle_anding(commands);
+    }
     else if (_strstr(buff,"||"))
+    {
         commands = split_string(buff,"||");
-        handle_oring
+        handle_oring(commands);
+    }
     else
         return(0);
     return (1);
