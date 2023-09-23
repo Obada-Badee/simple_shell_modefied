@@ -50,7 +50,7 @@ void handle_anding(char **commands)
     int *last_exit_code;
 
     search_execute(*(commands++));
-    while (*commands)
+    while (**commands)
     {
         *last_exit_code = get_exit_status;
         if (last_exit_code == EXIT_SUCCESS)
@@ -70,7 +70,7 @@ void handle_oring(char **commands)
     int *last_exit_code;
 
     search_execute(*(commands++));
-    while (*commands)
+    while (**commands)
     {
         last_exit_code = get_exit_status;
         if (last_exit_code == EXIT_SUCCESS)
@@ -87,6 +87,6 @@ void handle_oring(char **commands)
  */
 void handle_colon(char **commands)
 {
-    while (*commands)
+    while (**commands)
         search_execute(*(commands++));
 }
