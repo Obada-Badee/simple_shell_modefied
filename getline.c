@@ -19,14 +19,12 @@ int _gtline(char **lineptr, int fd)
     if (*lineptr == NULL)
     {
         free(*lineptr);
-        perror(EINVAL);
         return -1;
     }
     bytes_read = read(fd, buffer, BUFFER_SIZE);
     if (bytes_read <= 0)
     {   
         free(*lineptr);
-        perror(feof);
         return -1;
     }
     while(1)
