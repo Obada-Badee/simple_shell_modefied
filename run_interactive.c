@@ -7,7 +7,7 @@
  */
 void run_interactive(void)
 {
-    char *buff = NULL ,**commands;
+    char *buff = NULL ,**commands = NULL;
     int is_seperator;
     size_t n;
     while (1)
