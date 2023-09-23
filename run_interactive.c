@@ -28,6 +28,6 @@ void run_interactive(void)
             search_execute(buff);
         }
         free(buff);
-        free(commands);
+        free_tokens(commands);
     }
 }
