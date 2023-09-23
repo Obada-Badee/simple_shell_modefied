@@ -5,11 +5,11 @@
  *
  * Return: void
  */
-void search_execute(char *command)
+void search_execute(char **command)
 {
 	char **args, *full_path;
 
-	args = split_string(command, " \n");
+	args = split_string(*command, " \n");
 
 	if (search_builtins(args[0], args))
 	{
