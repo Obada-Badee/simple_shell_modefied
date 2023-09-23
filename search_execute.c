@@ -14,6 +14,7 @@ void search_execute(char *command)
 	if (search_builtins(args[0], args))
 	{
 		clean(args);
+		return;
 	}
 
 	full_path = find_file(args[0]);
@@ -22,6 +23,7 @@ void search_execute(char *command)
 	{
 		clean(args);
 		perror("Error");
+		return;
 	}
 	execute(args, full_path);
 	clean(args);

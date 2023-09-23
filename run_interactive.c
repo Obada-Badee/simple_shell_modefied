@@ -20,13 +20,10 @@ void run_interactive(void)
         is_seperator = check_separator(buff);
 
         if (is_seperator)
-        {
             continue;
-        }
         else
-        {
             search_execute(buff);
-        }
+            
         free(buff);
     }
 }
