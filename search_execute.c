@@ -26,5 +26,4 @@ void search_execute(char *command)
 		return;
 	}
 	execute(args, full_path);
-	clean(args);
 }
