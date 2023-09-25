@@ -13,7 +13,6 @@ int main() {
 
     _getlines(commands, &commandCount);
     process_lines(commands, commandCount);
-    free_lines(commands, commandCount);
 
     return 0;
 }
