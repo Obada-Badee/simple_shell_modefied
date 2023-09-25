@@ -32,7 +32,7 @@ void _getlines(char **commands, int *lines_count)
             continue;
 
         if (bytes_read == 0)
-            printf("End of input\n");  
+            break; 
 
         commands[*lines_count] = strdup(trimmed_line);
         (*lines_count)++;
