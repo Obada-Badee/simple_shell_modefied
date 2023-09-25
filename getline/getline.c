@@ -17,6 +17,8 @@ void _getlines(char **commands, int *lines_count)
     int i ; /* to go through buffer */
     int j = 0 ; /*to got through lines */
 
+    line = (char *) malloc(MAX_LINE_LENGTH * sizeof(page));
+
     while ((*lines_count < MAX_COMMANDS) && (bytes_read = read(STDIN_FILENO, page, sizeof(page))) > 0)
     {
         page[bytes_read] = '\0'; /*Null-terminate the page*/
@@ -45,10 +47,9 @@ void _getlines(char **commands, int *lines_count)
         if (strlen(trimmed_line) == 0)
             continue;
 
-        if (bytes_read == 0)
-            break; 
-
         commands[*lines_count] = strdup(trimmed_line);
         (*lines_count)++;
+
+        free(line);
     }
 }
