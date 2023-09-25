@@ -33,7 +33,5 @@ void _getlines(char **commands, int *lines_count)
 
         commands[*lines_count] = strdup(trimmed_line);
         (*lines_count)++;
-        free(trimmed_line);
-        free(end);
     }
 }
