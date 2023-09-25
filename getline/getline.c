@@ -3,7 +3,7 @@
 /**
  * _getlines - Super simple shell
  * @commands: The list were commands will be stored
- * @command_count: An integer pointer to the number of lines/commands
+ * @lines_count: An integer pointer to the number of lines/commands
  * Return: Always 0.
  */
 void _getlines(char **commands, int *lines_count)
@@ -13,7 +13,7 @@ void _getlines(char **commands, int *lines_count)
     char *end;
     ssize_t bytes_read;
 
-    while ( (bytes_read = read(STDIN_FILENO, line, sizeof(line))) > 0)
+    while ((*lines_count < MAX_COMMANDS) && (bytes_read = read(STDIN_FILENO, line, sizeof(line))) > 0)
     {
         line[bytes_read] = '\0'; /*Null-terminate the line*/
 

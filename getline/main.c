@@ -6,7 +6,7 @@
  * Return: Always 0.
  */
 int main() {
-    char **commands = NULL;
+    char **commands = malloc(MAX_COMMANDS * sizeof(char *));
     int commandCount = 0;
 
     printf("$ ");
