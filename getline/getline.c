@@ -28,6 +28,7 @@ void _getlines(char **commands, int *lines_count)
             ch = page[i];
             if (ch == '\n') {
                 line[j] = '\0';
+                break;
             }
             line[j++] = ch;
         }
