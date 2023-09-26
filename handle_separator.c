@@ -8,6 +8,7 @@
 int check_separator(char *buff)
 {
     char **commands;
+
     if (_strstr(buff,";"))
     {
         commands = split_string(buff,";");
@@ -25,6 +26,8 @@ int check_separator(char *buff)
     }
     else
         return(0);
+    
+    free(commands);
     return (1);
 }
 
@@ -58,6 +61,7 @@ void handle_oring(char **commands)
 {
     int *last_exit_code ;
     int i = 0;
+
     search_execute(commands[i++]);
     while (commands[i])
     {
@@ -77,6 +81,7 @@ void handle_oring(char **commands)
 void handle_colon(char **commands)
 {
     int i = 0;
+
     while (commands[i])
         search_execute(commands[i++]);
 }
